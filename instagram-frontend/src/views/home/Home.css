@@ -1,0 +1,24 @@
+.container-home {
+	padding-top: 22px;
+	margin: 0 auto;
+}
+
+.stories-container-home {
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+	align-items: start;
+	margin-bottom: 30px;
+}
+
+.options-story-home {
+	display: flex;
+	border-bottom: 1px solid #dbdbdb;
+	width: 100%;
+}
+
+@media screen and (max-width: 1900px) {
+	.container-home {
+		margin-left: var(--margin-aside);
+	}
+}

@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--margin-aside: 250px;
+}
+
+body {
+	background-color: rgb(255, 255, 255) !important;
+	color: rgb(0, 0, 0) !important;
+}
+
+a {
+	text-decoration: none !important;
+	color: rgb(0, 0, 0) !important;
+}

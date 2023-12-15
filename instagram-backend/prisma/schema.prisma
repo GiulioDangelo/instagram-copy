@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  firstname String
+  lastname  String
+  username  String    @unique(map: "User_username_key")
+  bio       String?
+  email     String    @unique(map: "User_email_key")
+  password  String
+  avatar    String?
+  followers Int       @default(0)
+  following Int       @default(0)
+  createdAt DateTime  @default(now())
+  isBanned  Boolean   @default(false)
+  post      Post[]
+}
+
+model Post {
+  postId      Int         @id @default(autoincrement())
+  authorId    Int
+  author      User        @relation(fields: [authorId], references: [id], map: "fk_user_id", onDelete: Cascade)
+  description String
+  image       String
+  likes       Int         @default(0)
+  comments    Int         @default(0)
+  createdAt   DateTime    @default(now())
+  PostToTag   PostToTag[]
+}
+
+model Tag {
+  tagId     Int         @id @default(autoincrement())
+  name      String      @unique(map: "Tag_name_key")
+  PostToTag PostToTag[]
+}
+
+model PostToTag {
+  postId Int
+  tagId  Int
+  post   Post @relation(fields: [postId], references: [postId], onDelete: Cascade)
+  tag    Tag  @relation(fields: [tagId], references: [tagId], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@map("PostToTag")
+}

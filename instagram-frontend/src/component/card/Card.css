@@ -1,0 +1,43 @@
+.card-container-card {
+	width: 470px;
+	border-bottom: 1px solid #e6e6e6;
+	margin-bottom: 20px;
+	padding-bottom: 16px;
+}
+
+.avatar-card img {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.username-card {
+	font-size: 15px;
+	font-weight: 600;
+	margin: 0 10px;
+}
+
+.card-image-card img {
+	display: block;
+	width: 100%;
+	height: 500px;
+	object-fit: contain !important;
+}
+
+.hashtag-card {
+	color: rgb(31, 79, 125) !important;
+	text-decoration: underline !important;
+}
+
+.footer-card {
+	font-size: 15px;
+}
+
+.comments-card {
+	font-size: 14px;
+}
+
+.interact-card i:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
